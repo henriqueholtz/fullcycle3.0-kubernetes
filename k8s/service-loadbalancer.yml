@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeserver-service
+spec:
+  selector:
+    app: nodeserver
+  type: LoadBalancer
+  ports:
+    - name: nodeserver-service
+      port: 80
+      targetPort: 80
+      protocol: TCP
