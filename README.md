@@ -5,7 +5,8 @@ Este repositório é referente ao conteúdo no módulo **Kubernetes** do curso *
 ### Characteristics:
 
 - :heavy_check_mark: **kind**
-- :heavy_check_mark: **Node + express**
+- :heavy_check_mark: **Docker**
+- :heavy_check_mark: **Node + express + docker + Typescript**
 - :heavy_check_mark: **Kubernetes**
   - :heavy_check_mark: **Pod**
   - :heavy_check_mark: **ReplicaSet**
