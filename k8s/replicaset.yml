@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: nodeserver
-  replicas: 2
+  replicas: 4
   template:
     metadata:
       name: 'nodeserver'
@@ -19,5 +19,4 @@ spec:
     spec:
       containers:
         - name: nodeserver
-          image: 'wesleywillians/hello-go:latest'
-      # image: 'henriqueholtz/nodeserver:latest'
+          image: 'henriqueholtz/nodeserver:latest'

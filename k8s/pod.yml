@@ -8,5 +8,4 @@ metadata:
 spec:
   containers:
     - name: nodeserver
-      image: 'wesleywillians/hello-go:latest'
-      # image: 'henriqueholtz/nodeserver:latest'
+      image: 'henriqueholtz/nodeserver:latest'

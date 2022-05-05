@@ -19,5 +19,9 @@ spec:
     spec:
       containers:
         - name: nodeserver
-          image: 'wesleywillians/hello-go:latest'
-      # image: 'henriqueholtz/nodeserver:latest'
+          image: 'henriqueholtz/nodeserver:latest'
+          env:
+            - name: name
+              value: 'Henrique Holtz'
+            - name: age
+              value: '22'
