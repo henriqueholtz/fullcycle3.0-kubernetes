@@ -22,6 +22,12 @@ spec:
           image: 'henriqueholtz/nodeserver:latest'
           env:
             - name: name
-              value: 'Henrique Holtz'
+              valueFrom:
+                configMapKeyRef:
+                  name: nodeserver-env
+                  key: NAME
             - name: age
-              value: '22'
+              valueFrom:
+                configMapKeyRef:
+                  name: nodeserver-env
+                  key: AGE
