@@ -8,6 +8,12 @@ app.get('/', (req, res) => {
   res.send(`Welcome! I'm ${process.env.name}. I'm ${process.env.age}`);
 });
 
+app.get('/secrets', (req, res) => {
+  res.send(
+    `Secrets:! username: ${process.env.username}. password ${process.env.password}`
+  );
+});
+
 app.get('/configmap', (req, res) => {
   let result;
   try {
