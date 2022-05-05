@@ -3,7 +3,7 @@ import express from 'express';
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Welcome!');
+  res.send(`Welcome! I'm ${process.env.name}. I'm ${process.env.age}`);
 });
 
 app.listen(3000, () => {

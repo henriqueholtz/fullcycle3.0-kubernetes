@@ -1,9 +1,11 @@
-FROM node:14 as dev
+FROM node:alpine3.15 as appbuild
 
-RUN mkdir /appdev
-WORKDIR /appdev
+WORKDIR /appdevbuild
 COPY package*.json ./
 COPY index.ts ./
 
-RUN yarn install --frozen-lockfile
-CMD ["yarn", "start"]
+RUN npm install --frozen-lockfile
+CMD ["npm", "start"]
+
+#docker build -t henriqueholtz/nodeserver:latest .
+#docker push henriqueholtz/nodeserver
