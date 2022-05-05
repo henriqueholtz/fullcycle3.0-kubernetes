@@ -23,6 +23,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: nodeserver-env
+            - secretRef:
+                name: nodeserver-secret
           volumeMounts:
             - mountPath: '/appdevbuild/files' # path where app is running (container for example)
               name: configmapvol # Equals to volume name below
