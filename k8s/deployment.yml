@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: nodeserver
-  replicas: 2
+  replicas: 3
   template:
     metadata:
       name: 'nodeserver'
@@ -20,14 +20,20 @@ spec:
       containers:
         - name: nodeserver
           image: 'henriqueholtz/nodeserver:latest'
-          env:
-            - name: name
-              valueFrom:
-                configMapKeyRef:
-                  name: nodeserver-env
-                  key: NAME
-            - name: age
-              valueFrom:
-                configMapKeyRef:
-                  name: nodeserver-env
-                  key: AGE
+          envFrom:
+            - configMapRef:
+                name: nodeserver-env
+
+          #envFrom to select all from configMap
+          #env to select individual keys
+          # env:
+          #   - name: name
+          #     valueFrom:
+          #       configMapKeyRef:
+          #         name: nodeserver-env
+          #         key: NAME
+          #   - name: age
+          #     valueFrom:
+          #       configMapKeyRef:
+          #         name: nodeserver-env
+          #         key: AGE
