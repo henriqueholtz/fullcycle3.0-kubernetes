@@ -39,3 +39,11 @@ Este repositório é referente ao conteúdo no módulo **Kubernetes** do curso *
   - `kubectl apply -f k8s/configmap-file.yml`
   - `kubectl apply -f k8s/secret.yml`
   - `kubectl apply -f k8s/hpa.yml`
+
+## How to see HPA in activity
+
+- Use `Fortio` to simulate a stress test
+
+  ```
+  kubectl run -it fortio --rm --image=fortio/fortio -- load -qps 200 -t 120s -c 30 "http://nodeserver-service:3000/"
+  ```
