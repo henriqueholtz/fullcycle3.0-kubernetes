@@ -13,6 +13,8 @@ Este repositório é referente ao conteúdo no módulo **Kubernetes** do curso *
   - :heavy_check_mark: **Service - ClusterIP**
   - :heavy_check_mark: **Service - LoadBalancer**
   - :heavy_check_mark: **Deployment**
+    - :heavy_check_mark: **Liveness (Probe)**
+    - :heavy_check_mark: **Readiness (Probe)**
   - :heavy_check_mark: **ConfigMap (p/ variáveis de ambiente)**
   - :heavy_check_mark: **ConfigMap (p/ arquivo montado em volume)**
   - :heavy_check_mark: **Secret**

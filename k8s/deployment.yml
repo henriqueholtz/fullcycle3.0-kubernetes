@@ -28,6 +28,17 @@ spec:
             failureThreshold: 1
             timeoutSeconds: 1
             successThreshold: 1
+            initialDelaySeconds: 10
+
+          readinessProbe:
+            httpGet:
+              path: '/healthz'
+              port: 3000 # Service port (don't container port)
+            periodSeconds: 10
+            failureThreshold: 1
+            timeoutSeconds: 1
+            successThreshold: 1
+            initialDelaySeconds: 10
 
           envFrom:
             - configMapRef:
