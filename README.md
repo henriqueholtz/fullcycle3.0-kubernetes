@@ -19,3 +19,10 @@ Este repositório é referente ao conteúdo no módulo **Kubernetes** do curso *
   - :heavy_check_mark: **ConfigMap (p/ variáveis de ambiente)**
   - :heavy_check_mark: **ConfigMap (p/ arquivo montado em volume)**
   - :heavy_check_mark: **Secret**
+
+## How to start (to development)
+
+1. **Install Kind;**
+2. **Create `Cluster;`** Ex: `kind create cluster --config=k8s/kind.yml --name=kind-cluster`
+3. **Install `metrics-server` without TLS;** Ex: `kubectl apply -f k8s/metrics-server.yml`
+4. **Apply some setting/change;** Ex: `kubectl apply -f k8s/deployment.yml`
