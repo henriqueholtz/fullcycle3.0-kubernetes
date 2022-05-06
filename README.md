@@ -20,6 +20,7 @@ Este repositório é referente ao conteúdo no módulo **Kubernetes** do curso *
   - :heavy_check_mark: **ConfigMap (p/ variáveis de ambiente)**
   - :heavy_check_mark: **ConfigMap (p/ arquivo montado em volume)**
   - :heavy_check_mark: **Secret**
+  - :heavy_check_mark: **HPA (HorizontalPodAutoscaler)**
 
 <br /> <br />
 
@@ -32,8 +33,9 @@ Este repositório é referente ao conteúdo no módulo **Kubernetes** do curso *
 
 ### Don't forget of:
 
-- Apply other settings as example: `Secret`, `ConfigMap`
+- Apply other settings as example: `Secret`, `ConfigMap`, `HorizontalPodAutoscaler`
   #### Example of needs to `k8s/deployment.yml`
   - `kubectl apply -f k8s/configmap-env.yml`
   - `kubectl apply -f k8s/configmap-file.yml`
   - `kubectl apply -f k8s/secret.yml`
+  - `kubectl apply -f k8s/hpa.yml`
