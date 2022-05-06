@@ -21,6 +21,15 @@ spec:
         - name: nodeserver
           image: 'henriqueholtz/nodeserver:latest'
 
+          resources: # This seize/reserve this resources
+            requests:
+              # 1vCPU: 1000m (milicores)
+              cpu: 500m # or 0.5 (at porcentage)
+              memory: 30Mi
+            limits:
+              cpu: 1000m
+              memory: 50Mi
+
           startupProbe: # HTTPS, COMMAND or TCP
             httpGet:
               path: '/healthz'
