@@ -20,6 +20,15 @@ spec:
       containers:
         - name: nodeserver
           image: 'henriqueholtz/nodeserver:latest'
+          livenessProbe: # HTTPS, COMMAND or TCP
+            httpGet:
+              path: '/healthz'
+              port: 3000 # Service port (don't container port)
+            periodSeconds: 10
+            failureThreshold: 1
+            timeoutSeconds: 1
+            successThreshold: 1
+
           envFrom:
             - configMapRef:
                 name: nodeserver-env
