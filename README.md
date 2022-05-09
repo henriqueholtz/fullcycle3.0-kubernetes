@@ -26,6 +26,7 @@ Este repositório é referente ao conteúdo no módulo **Kubernetes** do curso *
   - :heavy_check_mark: **StatefulSet**
   - :heavy_check_mark: **Ingress**
   - :heavy_check_mark: **ClusterIssuer**
+  - :heavy_check_mark: **ServiceAccount**
 
 <br /> <br />
 

@@ -17,6 +17,7 @@ spec:
       labels:
         app: 'nodeserver'
     spec:
+      serviceAccount: serviceaccount-server # Equals to ServiceAccount -> name
       containers:
         - name: nodeserver
           image: 'henriqueholtz/nodeserver:latest'
