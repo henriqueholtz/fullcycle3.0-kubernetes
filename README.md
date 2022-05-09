@@ -17,10 +17,13 @@ Este repositório é referente ao conteúdo no módulo **Kubernetes** do curso *
     - :heavy_check_mark: **Readiness (Probe)**
     - :heavy_check_mark: **Startup (Probe)**
     - :heavy_check_mark: **Resources Control**
+    - :heavy_check_mark: **PersistentVolume**
+    - :heavy_check_mark: **PersistentVolumeClaim**
   - :heavy_check_mark: **ConfigMap (p/ variáveis de ambiente)**
   - :heavy_check_mark: **ConfigMap (p/ arquivo montado em volume)**
   - :heavy_check_mark: **Secret**
   - :heavy_check_mark: **HPA (HorizontalPodAutoscaler)**
+  - :heavy_check_mark: **StatefulSet**
 
 <br /> <br />
 
