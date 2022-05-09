@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: nodeserver
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       name: 'nodeserver'
@@ -24,41 +24,41 @@ spec:
           resources: # This seize/reserve this resources
             requests:
               # 1vCPU: 1000m (milicores)
-              cpu: 500m # or 0.5 (at porcentage)
-              memory: 30Mi
+              cpu: 200m # or 0.5 (at porcentage)
+              memory: 155Mi
             limits:
               cpu: 1000m
-              memory: 50Mi
+              memory: 200Mi
 
-          startupProbe: # HTTPS, COMMAND or TCP
-            httpGet:
-              path: '/healthz'
-              port: 3000 # Service port (don't container port)
-            periodSeconds: 10
-            failureThreshold: 30
-            timeoutSeconds: 1
-            successThreshold: 1
-            initialDelaySeconds: 10
+          # startupProbe: # HTTPS, COMMAND or TCP
+          #   httpGet:
+          #     path: '/healthz'
+          #     port: 3000 # Service port (don't container port)
+          #   periodSeconds: 10
+          #   failureThreshold: 30
+          #   timeoutSeconds: 1
+          #   successThreshold: 1
+          #   initialDelaySeconds: 10
 
-          livenessProbe: # HTTPS, COMMAND or TCP
-            httpGet:
-              path: '/healthz'
-              port: 3000 # Service port (don't container port)
-            periodSeconds: 10
-            failureThreshold: 1
-            timeoutSeconds: 1
-            successThreshold: 1
-            # initialDelaySeconds: 10 # Needs when don't using startupProbe
+          # livenessProbe: # HTTPS, COMMAND or TCP
+          #   httpGet:
+          #     path: '/healthz'
+          #     port: 3000 # Service port (don't container port)
+          #   periodSeconds: 10
+          #   failureThreshold: 1
+          #   timeoutSeconds: 1
+          #   successThreshold: 1
+          #   # initialDelaySeconds: 10 # Needs when don't using startupProbe
 
-          readinessProbe:
-            httpGet:
-              path: '/healthz'
-              port: 3000 # Service port (don't container port)
-            periodSeconds: 10
-            failureThreshold: 1
-            timeoutSeconds: 1
-            successThreshold: 1
-            # initialDelaySeconds: 10 # Needs when don't using startupProbe
+          # readinessProbe:
+          #   httpGet:
+          #     path: '/healthz'
+          #     port: 3000 # Service port (don't container port)
+          #   periodSeconds: 10
+          #   failureThreshold: 1
+          #   timeoutSeconds: 1
+          #   successThreshold: 1
+          #   # initialDelaySeconds: 10 # Needs when don't using startupProbe
 
           envFrom:
             - configMapRef:
@@ -68,6 +68,8 @@ spec:
           volumeMounts:
             - mountPath: '/appdevbuild/files' # path where app is running (container for example)
               name: configmapvol # Equals to volume name below
+            - mountPath: '/appdevbuild/pvc'
+              name: nodeserver-pvc-vol
 
           #envFrom to select all from configMap
           #env to select individual keys
@@ -84,6 +86,9 @@ spec:
           #         key: AGE
 
       volumes:
+        - name: nodeserver-pvc-vol
+          persistentVolumeClaim:
+            claimName: nodeserver-pvc
         - name: configmapvol
           configMap:
             name: configmap-file
