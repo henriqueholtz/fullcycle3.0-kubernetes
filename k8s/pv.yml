@@ -1,0 +1,10 @@
+# pv: Persistent Volume
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: persistent-volume-1
+spec:
+  capacity:
+    storage: 50Gi
+  accessModes:
+    - ReadWriteOnce
